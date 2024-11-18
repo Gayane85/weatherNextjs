@@ -1,27 +1,27 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import IconaMoon from "../icons/iconamoon/IconaMoon";
-import { getCityWeather } from "@/api";
+import { DailyData, getCityWeather, HourlyDada, Location } from "@/api";
 import { useEffect, useState } from "react";
 
-interface SearchPlaceProps {
-  addLocation: (location: Location, hourlyData: any) => void;
-}
-interface Location {
-  name: string;
-  country: string;
-  temperature: number;
+interface WeatherData {
+  location: Location;
+
+  currentWeather: {
+    temp_c: number;
+    wind_kph: number;
+    icon: string;
+  };
+  hourlyData: HourlyDada[];
+  dailyData: DailyData[];
 }
 
-interface WeatherData {
-  location: {
-    name: string;
-    country: string;
-  };
-  current: {
-    temp_c: number;
-  };
-  hourlyData: Array<{ time: string; temp_c: number }>;
+interface SearchPlaceProps {
+  addLocation: (
+    location: Location,
+    hourlyData: HourlyDada[],
+    dailyData: DailyData[]
+  ) => void;
 }
 
 const SearchPlace: React.FC<SearchPlaceProps> = ({ addLocation }) => {
@@ -40,6 +40,8 @@ const SearchPlace: React.FC<SearchPlaceProps> = ({ addLocation }) => {
         name: data.location.name,
         country: data.location.country,
         temperature: data.currentWeather.temp_c,
+        wind_speed: data.currentWeather.wind_kph,
+        icon: data.currentWeather.icon,
       };
 
       addLocation(location, data.hourlyData, data.dailyData);
@@ -48,7 +50,7 @@ const SearchPlace: React.FC<SearchPlaceProps> = ({ addLocation }) => {
     }
   }, [data]);
 
-  console.log(data);
+  console.log("searchPlace:", data);
   const handleKeyEnter = (e: React.FormEvent): void => {
     e.preventDefault();
     setQueryCity(city);

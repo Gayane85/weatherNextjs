@@ -6,6 +6,7 @@ interface Location {
   name: string;
   country: string;
   temperature: number;
+  icon: string;
 }
 interface RecentLocationsProps {
   locations: Location[];
@@ -25,12 +26,16 @@ const RecentLocations: React.FC<RecentLocationsProps> = ({ locations }) => {
         {locations.map((location, index) => (
           <div key={index} className="w-[82px] h-[55px] gap-[12px]">
             <h3>{location.name}</h3>
-            <div className="text-[12px] font-400">
+            <div className="text-xs font-400">
               {location.country || "Unknoun"}
             </div>
             <div className="flex items-center gap-4">
-              <Group />
-              <div className="w-[47px] h-[39px] text-lg flex items-center justify-center">
+              <img
+                src={location.icon}
+                alt="weather icon"
+                className=" w-[2rem] h-[2rem] pl-0"
+              />
+              <div className="w-[47px] h-[39px] text-2xl flex items-center justify-center">
                 {Math.round(location.temperature)}&deg;C
               </div>
             </div>

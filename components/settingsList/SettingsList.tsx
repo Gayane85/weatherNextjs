@@ -2,10 +2,10 @@ import React from "react";
 import Fluent_Mdl2_Settings from "../icons/fluent-mdl2_settings/Fluent_Mdl2_Settings";
 import SettingLink from "../settingsLink/SettingLink";
 
-const SettingsList = ({ isOpen }) => {
+const SettingsList = ({ isOpen }: any) => {
   return (
     <div
-      className={`absolute flex flex-col bg-white top-5 right-4 w-[288px] h-[814px] border-gray-400 rounded-[8px] py-8 px-7 shadow-lg transform transition-transform duration-300 ${
+      className={` flex flex-col bg-white top-5 right-4 w-[288px] h-[814px] border-gray-400 rounded-[8px] py-8 px-7 shadow-lg transform transition-transform duration-300 ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
