@@ -77,7 +77,7 @@ const WeeklyChart: React.FC<WeeklyChartProps> = ({ data }) => {
   };
 
   return (
-    <div className=" h-50 items-center justify-center bg-white mx-20 my-20 rounded-[14px] py-[20px] px-[26px]">
+    <div className=" h-full w-full items-center justify-center bg-white  rounded-[14px] py-[10px] px-[10px]">
       <Bar data={chartData} options={options} />
     </div>
   );

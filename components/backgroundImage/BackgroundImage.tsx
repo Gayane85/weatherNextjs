@@ -9,37 +9,27 @@ const BackgroundImage = ({ children }: { children: React.ReactNode }) => {
   const burgerClick = (): void => {
     setIsOpen((prev) => !prev);
   };
-  // const handleBackgroundClick = () => {
-  //   if (isOpen) {
-  //     setIsOpen(false);
-  //   }
-  // };
+
   return (
-    <div
-      // onClick={handleBackgroundClick}
-      className="relative flex mx-0 items-center justify-center w-full h-[661px] rounded-[14px] overflow-hidden"
-    >
+    <div className="relative flex mx-0 items-center justify-center w-full max-w-[1440px] h-[400px] sm:h-[500px] md:h-[600px] lg:h-[661px] rounded-[14px] overflow-hidden">
       <Image
-        src="/Rectangle1.png"
+        src="/redMountains.png"
         alt="mount"
         layout="fill"
         objectFit="cover"
         className="absolute inset-0 z-0"
       />
-
-      <BurgerIcon
+      <div
         onClick={burgerClick}
-        // onClick={(e) => {
-        //   e.stopPropagation();
-        //   burgerClick();
-        // }}
-        className="absolute text-white cursor-pointer top-2 right-4 w-8 h-8  z-30"
-      />
-      <SettingsList isOpen={isOpen} />
+        className="absolute text-gray-100 cursor-pointer top-2 right-4 w-8 h-8  z-30"
+      >
+        <BurgerIcon />
+      </div>
+      <div className="absolute top-1 right-0">
+        <SettingsList isOpen={isOpen} />
+      </div>
 
-      {/* {isOpen && <SettingsList onClose={() => setIsOpen(false)} />} */}
-
-      <div className="relative z-20">{children}</div>
+      <div className="relative  z-20">{children}</div>
     </div>
   );
 };

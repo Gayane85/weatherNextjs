@@ -1,7 +1,12 @@
+import { DailyData } from "@/api";
 import Image from "next/image";
 import React from "react";
 
-const WeatherRadar = ({ dailyData }) => {
+interface WeatherRadarProps {
+  dailyData: DailyData[];
+}
+
+const WeatherRadar: React.FC<WeatherRadarProps> = ({ dailyData }) => {
   const temperatureRanges = [
     { temp: 40, color: "#E69532" },
     { temp: 20, color: "#D29F1F" },
@@ -10,7 +15,7 @@ const WeatherRadar = ({ dailyData }) => {
     { temp: -20, color: "#424099" },
   ];
   return (
-    <div className="w-[493px] h-[436px] rounded-[14px] bg-white mt-10 py-[14px] px-[26px] gap-[10px]">
+    <div className="w-full max-w-[600px] sm:max-w-[493px] h-[456px] rounded-[14px] bg-white mt-10 py-[14px] px-[26px] gap-[10px]">
       <div className="w-[432px] h-[44px] ">
         <h4 className="font-400 text-[#51808E] text-[32px] text-center">
           World Weather Radar
@@ -20,10 +25,10 @@ const WeatherRadar = ({ dailyData }) => {
         </h6>
         <div className="flex py-6 gap-4">
           <div>
-            <Image src="/Group 13.png" alt="armMap" width={173} height={145} />
+            <Image src="/armMap.png" alt="armMap" width={173} height={145} />
           </div>
           <div>
-            <Image src="/Frame 169.png" alt="armMap" width={97} height={69} />
+            <Image src="/franceMap.png" alt="armMap" width={97} height={69} />
           </div>
           <div className="flex flex-col gap-2 ">
             {temperatureRanges.map((range, index) => (
@@ -47,14 +52,14 @@ const WeatherRadar = ({ dailyData }) => {
         </div>
         <div className="flex cols-3 mt-3">
           <div>
-            <Image src="/Frame 165.png" alt="sea" width={173} height={145} />
+            <Image src="/australiaMap.png" alt="sea" width={173} height={145} />
           </div>
           <div>
-            <Image src="/Group 14.png" alt="sea" width={173} height={145} />
+            <Image src="/cloud.png" alt="sea" width={173} height={145} />
           </div>
 
           <div>
-            <Image src="/Group 16.png" alt="sea" width={173} height={145} />
+            <Image src="/chinaMap.png" alt="sea" width={173} height={145} />
           </div>
         </div>
       </div>
