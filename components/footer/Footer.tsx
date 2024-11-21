@@ -6,7 +6,7 @@ import Facebook from "../icons/facebook/Facebook";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#302F38] w-[120rem] h-[30rem]  text-white py-10">
+    <footer className="bg-[#302F38] w-full  text-white py-10">
       <div className="max-w-7xl w-[80rem] h-[20rem] mx-auto mt-[6rem]  mb-[1.5px]  grid grid-cols-4 gap-8 px-6">
         <div>
           <h3 className="text-lg font-bold mb-4">Weather & Climate</h3>

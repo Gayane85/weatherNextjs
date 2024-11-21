@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <div>
       <BackgroundImage>
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full p-4 sm:p-6 lg:p-8">
           <SearchPlace addLocation={addLocation} />
           <RecentLocations locations={recentLocation} />
         </div>
@@ -53,7 +53,7 @@ export default function Home() {
           dailyData={dailyData}
         />
       </div>
-      {/* <BlogNews /> */}
+      <BlogNews />
       <EuropeanWeatherMap />
     </div>
   );

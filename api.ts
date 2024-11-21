@@ -9,11 +9,18 @@ export interface Location {
   temperature: number;
   wind_speed: number;
   icon: string;
+  humidity: number;
+  pressure_hpa: number;
+  description: string;
 }
 export interface CurrentWeather {
   temp_c: number;
   wind_kph: number;
   icon: string;
+  humidity: number;
+  pressure_hpa: number;
+  uv_index: number;
+  description: string;
 }
 export interface HourlyDada {
   time: string;
@@ -31,6 +38,9 @@ export interface DailyData {
   month: string;
   rain: number;
   sun: number;
+  rainChance: number;
+  uvIndex: number;
+  avgTemp: number;
 }
 export interface WeatherData {
   location: Location;
@@ -71,6 +81,9 @@ export const getCityWeather = async (city: string): Promise<WeatherData> => {
     const sun = day.day.avgtemp_c;
     const maxTemp = day.day.maxtemp_c;
     const minTemp = day.day.mintemp_c;
+    const rainChance = day.day.daily_chance_of_rain;
+    const uvIndex = day.day.uv;
+    const avgTemp = day.day.avgtemp_c;
 
     const hourlyTemps = todayData.hour.map((hour: any) => ({
       time: hour.time.split(" ")[1],
@@ -89,6 +102,9 @@ export const getCityWeather = async (city: string): Promise<WeatherData> => {
       hourlyTemps,
       conditionText,
       icon,
+      rainChance,
+      uvIndex,
+      avgTemp,
     };
   });
 
@@ -98,6 +114,10 @@ export const getCityWeather = async (city: string): Promise<WeatherData> => {
       temp_c: currentWeather.temp_c,
       wind_kph: currentWeather.wind_kph,
       icon: currentWeather.condition.icon,
+      humidity: currentWeather.humidity,
+      pressure_hpa: currentWeather.pressure_mb,
+      uv_index: currentWeather.uv,
+      description: currentWeather.condition.text,
     },
     hourlyData,
     dailyData,

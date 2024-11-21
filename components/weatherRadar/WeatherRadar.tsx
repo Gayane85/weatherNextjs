@@ -1,7 +1,12 @@
+import { DailyData } from "@/api";
 import Image from "next/image";
 import React from "react";
 
-const WeatherRadar = ({ dailyData }) => {
+interface WeatherRadarProps {
+  dailyData: DailyData[];
+}
+
+const WeatherRadar: React.FC<WeatherRadarProps> = ({ dailyData }) => {
   const temperatureRanges = [
     { temp: 40, color: "#E69532" },
     { temp: 20, color: "#D29F1F" },
@@ -10,7 +15,7 @@ const WeatherRadar = ({ dailyData }) => {
     { temp: -20, color: "#424099" },
   ];
   return (
-    <div className="w-[493px] h-[456px] rounded-[14px] bg-white mt-10 py-[14px] px-[26px] gap-[10px]">
+    <div className="w-full max-w-[600px] sm:max-w-[493px] h-[456px] rounded-[14px] bg-white mt-10 py-[14px] px-[26px] gap-[10px]">
       <div className="w-[432px] h-[44px] ">
         <h4 className="font-400 text-[#51808E] text-[32px] text-center">
           World Weather Radar

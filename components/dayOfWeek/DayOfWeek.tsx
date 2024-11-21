@@ -20,7 +20,7 @@ const DayOfWeek: React.FC<DayOfWeekProps> = ({
   icon,
 }) => {
   return (
-    <div className="flex">
+    <div className="flex relative">
       <div className=" flex rounded-md w-14 h-14 items-center justify-center bg-white/30">
         <img src={icon} alt="weatherIcon" width={30} height={30} />
       </div>
@@ -31,8 +31,8 @@ const DayOfWeek: React.FC<DayOfWeekProps> = ({
         <div className="text-sm">{conditionText}</div>
       </div>
       <div className="flex left-3 ">
-        <div className="w-px h-14   bg-white"></div>
-        <div className="ml-1 mt-1 text-right text-sm">
+        <div className=" absolute w-px h-14 right-5  bg-white"></div>
+        <div className="absolute right-0 ml-1 mt-1 text-right text-sm">
           <div>{minTemp}</div>
           <div>{maxTemp}</div>
         </div>

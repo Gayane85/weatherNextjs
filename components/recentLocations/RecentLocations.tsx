@@ -1,6 +1,6 @@
 "use client";
+
 import React from "react";
-import Group from "../icons/group/Group";
 
 interface Location {
   name: string;

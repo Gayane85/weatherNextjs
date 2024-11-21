@@ -11,7 +11,7 @@ const BackgroundImage = ({ children }: { children: React.ReactNode }) => {
   };
 
   return (
-    <div className="relative flex mx-0 items-center justify-center w-full h-[661px] rounded-[14px] overflow-hidden">
+    <div className="relative flex mx-0 items-center justify-center w-full max-w-[1440px] h-[400px] sm:h-[500px] md:h-[600px] lg:h-[661px] rounded-[14px] overflow-hidden">
       <Image
         src="/redMountains.png"
         alt="mount"
@@ -29,7 +29,7 @@ const BackgroundImage = ({ children }: { children: React.ReactNode }) => {
         <SettingsList isOpen={isOpen} />
       </div>
 
-      <div className="relative z-20">{children}</div>
+      <div className="relative  z-20">{children}</div>
     </div>
   );
 };

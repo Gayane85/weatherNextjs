@@ -65,7 +65,7 @@ const HourlyChart: React.FC<HourlyChartProps> = ({ data }) => {
   };
 
   return (
-    <div className="w-full h-full top-[855px] my-10  bg-white rounded-[14px] bg-white/90 px-[126px] py-[34px] gap-[10px] ">
+    <div className="w-full  h-auto sm:h-[400px] lg:h-[600px] top-[855px] my-10  bg-white rounded-[14px] bg-white/90 px-[126px] py-[34px] gap-[10px] ">
       <Line data={chartData} options={options} />
     </div>
   );

@@ -4,13 +4,13 @@ import React from "react";
 const EuropeanWeatherMap = () => {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center  bg-[#ECF3F6] py-10 w-[120rem] h-[69rem] ">
+      <div className="flex flex-col items-center justify-center  bg-[#ECF3F6] py-10 w-full max-w-[120rem] h-[69rem] ">
         <div className=" w-[77.5rem] h-[57.75rem]  ">
           <div className="text-[#51808E] font-serif font-normal text-[2rem]">
             European Weather Map
           </div>
           <div className=" bg-[#0535445C]/10  w-[77.5rem] h-[51rem] rounded-md mt-[5rem]  ">
-            <div className=" w-[70.875rem] h-[43.75rem] mt-[3.5rem] pt-[3rem] ml-[3.5rem] mr-[3.1rem] mb-[6rem]">
+            <div className="w-full max-w-[70.875rem] h-[43.75rem] mt-[3.5rem] pt-[3rem] ml-[3.5rem] mr-[3.1rem] mb-[6rem]">
               <div className="flex pt-0">
                 <Image
                   src="/europeanMap.png"

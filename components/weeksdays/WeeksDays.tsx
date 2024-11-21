@@ -19,7 +19,7 @@ const WeeksDays: React.FC<WeekDaysProps> = ({
   console.log(hourlyData);
   console.log("WeeksDya:", dailyData);
   return (
-    <div className="absolute text-white flex flex-col right-0 top-0 mt-0 w-[310px] h-screen bg-[#D9D9D966] rounded-md p-0 z-20">
+    <div className=" text-white flex flex-col  mt-0 w-[310px] h-screen bg-[#D9D9D966] rounded-md p-0 z-20">
       {locations.map((location, index) => (
         <div key={index}>
           <div className=" flex justify-center pt-5">
